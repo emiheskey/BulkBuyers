@@ -11,9 +11,6 @@
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <link href="assets/css/switchery.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
-
-        <link href="assets/css/sweetalert2.min.css" rel="stylesheet" />
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -45,7 +42,7 @@
                             <!-- End mobile menu toggle-->
                         </li>
     
-                       <!--  <li class="d-none d-sm-block">
+                        <!-- <li class="d-none d-sm-block">
                             <form class="app-search">
                                 <div class="app-search-box">
                                     <div class="input-group">
@@ -143,18 +140,13 @@
     
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="fe-log-out"></i>
+                                    <i class="fa fa-power-off"></i>
                                     <span>Logout</span>
                                 </a>
     
                             </div>
                         </li>
     
-                        <li class="dropdown notification-list">
-                            <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect">
-                                <i class="mdi mdi-settings noti-icon"></i>
-                            </a>
-                        </li>
     
                     </ul>
     
@@ -187,16 +179,16 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a href="all-orders.html" class="active"> <i class="mdi mdi-shopping"></i>Orders <div class="arrow-down"></div></a>
+                                <a href="all-orders.html"> <i class="mdi mdi-shopping"></i>Orders <div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li>
                                         <a href="all-orders.html">All Orders</a>
                                     </li>
                                     <li>
-                                        <a href="ui-cards.html">Recent Orders</a>
+                                        <a href="recent-orders.html">Recent Orders</a>
                                     </li>
                                     <li>
-                                        <a href="ui-draggable-cards.html">Delivered Orders</a>
+                                        <a href="delivered-orders.html">Delivered Orders</a>
                                     </li>
                                 </ul>
                             </li>
@@ -256,152 +248,96 @@
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Bulk Buyers Connect</a></li>
-                                    <li class="breadcrumb-item active">Product Categories</li>
+                                    <li class="breadcrumb-item active"><a href="javascript: void(0);">All Products</a></li>
+                                    <li class="breadcrumb-item active">Edit/View product</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Product Categories</h4>
+                            <h4 class="page-title">Edit/View Product</h4>
                         </div>
                     </div>
                 </div>     
                 <!-- end page title --> 
-                <div class="row">
-
-                        <div class="col-xl-12">
-                            <div class="card-box">
-                                <h4 class="header-title mt-0 mb-3">Add new category</h4>
-                                <form>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                            <label for="cname" class="col-form-label">Category Name</label>
-                                            <input type="text" class="form-control" id="fname" placeholder="Category name">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="des" class="col-form-label">Description</label>
-                                            <input type="text" class="form-control" id="lname" placeholder="Category Description">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <label for="role" class="col-form-label">Status</label>
-                                            <select id="role" class="form-control">
-                                                <option>Enable</option>
-                                                <option>Disable</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-success btn-rounded btn-lg" type="button">Add Category</button>
-                                </form>
-                            </div>
-                            
-                        </div><!-- end col -->
-    
-                    </div>
-                    <!-- end row --> 
 
                 <div class="row">
-
-                    <div class="col-xl-12">
+                    <div class="col-12">
                         <div class="card-box">
-                            <div class="dropdown float-right">
-                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="mdi mdi-dots-vertical"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Refresh</a>
+                            <h4 class="m-t-0 header-title">Product Information</h4>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="p-2">
+                                        <form class="form-horizontal" role="form">
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="simpleinput">Product Name</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" id="simpleinput" class="form-control" value="Cow meat">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="example-placeholder">Product description</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" id="example-placeholder" class="form-control" value="Half of a Whole Cow">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label">Product category</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control">
+                                                        <option>Select</option>
+                                                        <option selected>Meat & Poultry</option>
+                                                        <option>Vegetables</option>
+                                                        <option>Beans & Grains</option>
+                                                        <option>Cooking Oil</option>
+                                                        <option>Fish & Seafoods</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="example-fileinput">Product image</label>
+                                                <div class="col-sm-10">
+                                                    <img src="assets/images/products/product1.jpg" width="200" class="img-fluid rounded-circle img-thumbnail">
+                                                    <h4>Change Image</h4>
+                                                    <input type="file" class="form-control" id="example-fileinput">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2  col-form-label" for="example-number">Price</label>
+                                                <div class="col-md-10">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="basic-addon1">NGN</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" value="56,000" aria-label="price" aria-describedby="basic-addon1">
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Status</label>
+                                                <div class="col-md-10">
+                                                        <label>Disable</label>
+                                                        <input type="checkbox" checked data-plugin="switchery" data-color="#00b19d" data-size="large" />
+                                                        <b>Enable</b>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mt-4">
+                                                <button class="btn btn-success btn-rounded btn-lg">Save Product</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="table-responsive">
-                                <table class="table table-hover mb-0">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Category name</th>
-                                        <th>Description</th>
-                                        <th>Number of Products</th>
-                                        <th>Status</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Meat & Poultry</td>
-                                            <td>Meat from Cow, Goat, Ram and Chicken</td>
-                                            <td>6</td>
-                                            <td><span class="badge badge-success">Enabled</span></td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".category"><i class="fa fa-search"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-close" id="sa-params"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Beans & Grains</td>
-                                            <td>All grains, rice and beans</td>
-                                            <td>5</td>
-                                            <td><span class="badge badge-success">Enabled</span></td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".category"><i class="fa fa-search"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-close" id="sa-params"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Cooking Oil</td>
-                                            <td>All cooking oils from Palm Oil to Vagetable oil</td>
-                                            <td>20</td>
-                                            <td><span class="badge badge-success">Enabled</span></td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".category"><i class="fa fa-search"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-close" id="sa-params"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Fish & Seafoods</td>
-                                            <td>Dry Fish, Fresh Fish, Stork Fish, Cray Fish and Snail</td>
-                                            <td>6</td>
-                                            <td><span class="badge badge-success">Enabled</span></td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".category"><i class="fa fa-search"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-close" id="sa-params"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Vegetables</td>
-                                            <td>All things Vegetables - Tomotoes, Pepper, Potatoes etc</td>
-                                            <td>4</td>
-                                            <td><span class="badge badge-danger">Disabled</span></td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".category"><i class="fa fa-search"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-close" id="sa-params"></i></a>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>  
-                               <!--  <nav>
-                                    <ul class="pagination m-b-0 mt-2 justify-content-center">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">«</span>
-                                                <span class="sr-only">Previous</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">»</span>
-                                                <span class="sr-only">Next</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>  -->                      
                             </div>
-                        </div>
-                        
+                            <!-- end row -->
+
+                        </div> <!-- end card-box -->
                     </div><!-- end col -->
-
                 </div>
-                <!-- end row -->        
+                <!-- end row -->     
 
             </div> <!-- end container -->
         </div>
@@ -427,40 +363,7 @@
             </div>
         </footer>
         <!-- end Footer -->
-         <!--  Modal for delivered order -->
-         <div class="modal fade category" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myLargeModalLabel">Product Details</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td>Category name:</td>
-                                        <td><input type="text" class="form-control" value="Meat & Chicken"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Category Description:</td>
-                                        <td><input type="text" class="form-control" value="Meat from Cow, Goat, Ram and Chicken"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Status:</td>
-                                        <td>    <label>Disable</label>
-                                                <input type="checkbox" checked data-plugin="switchery" data-color="#00b19d"/>
-                                                <b>Enable</b>
-                                        </td>
-                                    </tr>
-    
-                                </tbody>
-                            </table>
-                            <p><a href="#" class="btn btn-lg btn-success">Save Category</a></p>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal --> 
+
 
 
         <!-- Right bar overlay-->
@@ -483,9 +386,8 @@
         <script src="assets/js/daterangepicker.js"></script>
         <script src="assets/js/bootstrap-maxlength.min.js"></script>
 
-        <!-- Init js-->
+        <!-- Page init js-->
         <script src="assets/js/form-advanced.init.js"></script>
-
 
         <!-- App js-->
         <script src="assets/js/app.min.js"></script>
