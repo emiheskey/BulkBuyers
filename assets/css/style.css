@@ -7710,6 +7710,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #F07330;
   font-weight: 500;
 }
+.dashboard_content {
+  font-size: 16px;
+  }
 
 .table-responsive table thead {
   background: #f2f2f2;
