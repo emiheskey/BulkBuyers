@@ -9694,12 +9694,25 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 160px;
   margin: 0 0 54px;
 }
+.error_form h3 {
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  line-height: 100px;
+  margin: 0 0 34px;
+}
 @media only screen and (max-width: 767px) {
   .error_form h1 {
     font-size: 130px;
     line-height: 120px;
     letter-spacing: 4px;
     margin: 0 0 40px;
+  }
+  .error_form h3 {
+    font-size: 70px;
+    line-height: 80px;
+    letter-spacing: 4px;
+    margin: 0 0 20px;
   }
 }
 .error_form h2 {
