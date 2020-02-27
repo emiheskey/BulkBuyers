@@ -218,7 +218,7 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a href="all-orders.html" class="active"> <i class="mdi mdi-shopping"></i>Orders <div class="arrow-down"></div></a>
+                                <a href="all-orders.html" class="active"> <i class="mdi mdi-shopping"></i>Order Management <div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li>
                                         <a href="all-orders.html">All Orders</a>
@@ -227,7 +227,10 @@
                                         <a href="recent-orders.html">Recent Orders</a>
                                     </li>
                                     <li>
-                                        <a href="delivered-orders.html">Delivered Orders</a>
+                                        <a href="delivered-orders.html">Order Delivery</a>
+                                    </li>
+                                    <li>
+                                        <a href="completed-orders.html">Complete Orders</a>
                                     </li>
                                 </ul>
                             </li>
@@ -287,10 +290,10 @@
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Bulk Buyers Connect</a></li>
-                                    <li class="breadcrumb-item active">Deliverd Orders</li>
+                                    <li class="breadcrumb-item active">Order Delivery</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Delivered Orders</h4>
+                            <h4 class="page-title">Order Delivery</h4>
                         </div>
                     </div>
                 </div>     
@@ -310,7 +313,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="header-title mt-0 mb-3">Delivered orders</h4>
+                            <h4 class="header-title mt-0 mb-3">Order Delivery</h4>
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
@@ -338,18 +341,7 @@
                                     </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="control-label col-sm-4">Date Range</label>
-                                    <div class="col-sm-12">
-                                        <div class="input-daterange input-group" id="date-range">
-                                            <input type="text" class="form-control" name="start" />
-                                            <input type="text" class="form-control" name="end" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 mt-3">
-                                    <a href="#" class="btn btn-rounded btn-secondary btn-block">Filter</a>
-                                </div>
+                            
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0">
@@ -370,46 +362,48 @@
                                             <td>Cow Meat (Half)</td>
                                             <td>56,000</td>
                                             <td>26/04/2019</td>
-                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td><span class="badge badge-info">Processed</span></td>
                                             <td>Tosin Martins</td>
-                                            <td><a href="#" class="btn btn-success btn-sm"><i class="fa fa-search" data-toggle="modal" data-target=".delivered"></i></a></td>
+                                            <td><a href="#" class="btn btn-success btn-sm"> Deliver this order</a></td>
                                         </tr>
                                         <tr>
                                             <td>234</td>
                                             <td>Beans (10 mudus)</td>
                                             <td>6,500</td>
                                             <td>16/05/2019</td>
-                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td><span class="badge badge-info">Processed</span></td>
                                             <td>Lola Adams</td>
-                                            <td><a href="#" class="btn btn-success btn-sm"><i class="fa fa-search" data-toggle="modal" data-target=".delivered"></i></a></td>
+                                            <td><a href="#" class="btn btn-success btn-sm"> Deliver this order</a></td>
                                         </tr>
                                         <tr>
                                             <td>356</td>
                                             <td>Chicken (Whole)</td>
                                             <td>2,300</td>
                                             <td>10/05/2019</td>
-                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td><span class="badge badge-info">Processed</span></td>
                                             <td>Cordelia Abu</td>
-                                            <td><a href="#" class="btn btn-success btn-sm"><i class="fa fa-search" data-toggle="modal" data-target=".delivered"></i></a></td>
+                                            <td><a href="#" class="btn btn-success btn-sm"> Deliver this order</a></td>
                                         </tr>
                                         <tr>
                                             <td>478</td>
                                             <td>Snail (A Set)</td>
                                             <td>6,000</td>
                                             <td>31/05/2019</td>
-                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td><span class="badge badge-info">Processed</span></td>
                                             </td>
                                             <td>Moses Fabiyi</td>
-                                            <td><a href="#" class="btn btn-success btn-sm"><i class="fa fa-search" data-toggle="modal" data-target=".delivered"></i></a></td>
+                                            <td><a href="#" class="btn btn-success btn-sm"> Deliver this order</a></td>
                                         </tr>
                                         <tr>
                                             <td>509</td>
                                             <td>StorkFish (A bag)</td>
                                             <td>15,000</td>
                                             <td>11/12/2019</td>
-                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td><span class="badge badge-info">Processed</span></td>
                                             <td>Rhema Joy</td>
-                                            <td><a href="#" class="btn btn-success btn-sm"><i class="fa fa-search" data-toggle="modal" data-target=".delivered"></i></a></td>
+                                            <td><a href="#" class="btn btn-success btn-sm"> Deliver this order</a>
+                                                <a href="#" class="btn btn-default btn-sm"> Complete this order</a>
+                                            </td>
                                         </tr>
 
                                         <tr>
@@ -417,9 +411,9 @@
                                             <td>Palm Oil (5 litres)</td>
                                             <td>15,000</td>
                                             <td>29/10/2019</td>
-                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td><span class="badge badge-info">Processed</span></td>
                                             <td>Amin Balogun</td>
-                                            <td><a href="#" class="btn btn-success btn-sm"><i class="fa fa-search" data-toggle="modal" data-target=".delivered"></i></a></td>
+                                            <td><a href="#" class="btn btn-success btn-sm"> Deliver this order</a></td>
                                         </tr>
 
                                     </tbody>

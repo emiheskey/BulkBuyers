@@ -168,7 +168,7 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a href="all-orders.html" class="active"> <i class="mdi mdi-shopping"></i>Orders <div class="arrow-down"></div></a>
+                                <a href="all-orders.html" class="active"> <i class="mdi mdi-shopping"></i>Order Management <div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li>
                                         <a href="all-orders.html">All Orders</a>
@@ -177,7 +177,10 @@
                                         <a href="recent-orders.html">Recent Orders</a>
                                     </li>
                                     <li>
-                                        <a href="delivered-orders.html">Delivered Orders</a>
+                                        <a href="delivered-orders.html">Order Delivery</a>
+                                    </li>
+                                    <li>
+                                        <a href="completed-orders.html">Complete Orders</a>
                                     </li>
                                 </ul>
                             </li>
@@ -288,6 +291,9 @@
                                     </select>
                                     </div>
                                 </div>
+                                <div class="col-md-8 mt-3">
+                                    <a href="#" class="btn btn-rounded btn-success btn-lg pull-right mr-4 mb-2">Process these orders</a>
+                                </div>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover mb-0">
@@ -299,7 +305,7 @@
                                         <th>Date of Order</th>
                                         <th>Status</th>
                                         <th>Ordered by</th>
-                                        <th></th>
+                                        <th>Change Status</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -308,9 +314,10 @@
                                             <td>Cow Meat (Half)</td>
                                             <td>56,000</td>
                                             <td>26/04/2019</td>
-                                            <td><span class="badge badge-info">Pending</span></td>
+                                            <td><span class="badge badge-danger">Failed</span></td>
                                             <td>Tosin Martins</td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".pending-modal"><i class="fa fa-search"></i></a></td>
+                                            <td>
+                                                </td>
                                         </tr>
                                         <tr>
                                             <td>234</td>
@@ -319,16 +326,19 @@
                                             <td>16/05/2019</td>
                                             <td><span class="badge badge-info">Pending</span></td>
                                             <td>Lola Adams</td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".pending-modal"><i class="fa fa-search"></i></a></td>
+                                            <td>
+                                                <input type="checkbox" data-plugin="switchery" data-color="#00b19d" data-secondary-color="#cccccc" data-size="large" />
+                                                </td>
                                         </tr>
                                         <tr>
                                             <td>356</td>
                                             <td>Chicken (Whole)</td>
                                             <td>2,300</td>
                                             <td>10/05/2019</td>
-                                            <td><span class="badge badge-info">Pending</span></td>
+                                            <td><span class="badge badge-danger">Failed</span></td>
                                             <td>Cordelia Abu</td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".pending-modal"><i class="fa fa-search"></i></a></td>
+                                            <td>
+                                                </td>
                                         </tr>
                                         <tr>
                                             <td>478</td>
@@ -337,7 +347,9 @@
                                             <td>31/05/2019</td>
                                             <td><span class="badge badge-info">Pending</span></td>
                                             <td>Moses Fabiyi</td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".pending-modal"><i class="fa fa-search"></i></a></td>
+                                            <td>
+                                                <input type="checkbox" data-plugin="switchery" data-color="#00b19d" data-secondary-color="#cccccc" data-size="large" />
+                                                </td>
                                         </tr>
                                         <tr>
                                             <td>509</td>
@@ -346,7 +358,9 @@
                                             <td>11/12/2019</td>
                                             <td><span class="badge badge-info">Pending</span></td>
                                             <td>Rhema Joy</td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".pending-modal"><i class="fa fa-search"></i></a></td>
+                                            <td>
+                                                <input type="checkbox" data-plugin="switchery" data-color="#00b19d" data-secondary-color="#cccccc" data-size="large" />
+                                                </td>
                                         </tr>
 
                                         <tr>
@@ -356,7 +370,9 @@
                                             <td>29/10/2019</td>
                                             <td><span class="badge badge-info">Pending</span></td>
                                             <td>Amin Balogun</td>
-                                            <td><a href="#" class="btn btn-success btn-sm" data-toggle="modal" data-target=".pending-modal"><i class="fa fa-search"></i></a></td>
+                                            <td>
+                                                <input type="checkbox" data-plugin="switchery" data-color="#00b19d" data-secondary-color="#cccccc" data-size="large" />
+                                                </td>
                                         </tr>
 
                                     </tbody>
