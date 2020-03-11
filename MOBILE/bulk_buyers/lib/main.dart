@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Bulk Buyers',
       theme: ThemeData(
         // This is the theme of your application.
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
+
       ),
       home: WelcomeWidget(title: 'Bulk Buyers Connect'),
     );
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
 
 
 class WelcomeWidget extends StatefulWidget {
+
   WelcomeWidget({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -53,7 +56,7 @@ class BaseLayout extends StatelessWidget{
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/image-bg.png"),
+           image: AssetImage("assets/images/image-bg.png"),
             fit: BoxFit.cover,
           ),
         ),
@@ -134,29 +137,39 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Container(
-                              width: 128,
-                              height: 29,
-                              child: FlatButton(
-                                onPressed: () => this.onLearnMorePressed(context),
-                                color: Colors.black,
-                                textColor: Color.fromARGB(255, 255, 69, 0),
-                                padding: EdgeInsets.all(0),
-                                child: Text(
-                                  "Learn more",
-                                  style: TextStyle(
-                                    fontSize: 25,
-                                    fontFamily: "Roboto",
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Spacer(),
+//                          Column(
+//                            children: <Widget>[
+//                              (
+//                                child: Text(
+//                                  "THis is a test"
+//                                ),
+//                              ),
+//                            ],
+//
+//                          ),
+//                          Align(
+//                            alignment: Alignment.topLeft,
+//                            child: Container(
+//                              width: 128,
+//                              height: 29,
+////                              child: FlatButton(
+////                                onPressed: () => this.onLearnMorePressed(context),
+////                                color: Colors.black,
+////                                textColor: Color.fromARGB(255, 255, 69, 0),
+////                                padding: EdgeInsets.all(0),
+////                                child: Text(
+////                                  "Learn more",
+////                                  style: TextStyle(
+////                                    fontSize: 25,
+////                                    fontFamily: "Roboto",
+////                                    fontWeight: FontWeight.w700,
+////                                  ),
+////                                  textAlign: TextAlign.left,
+////                                ),
+////                              ),
+//                            ),
+//                          ),
+//                          Spacer(),
                           Align(
                             alignment: Alignment.topLeft,
                             child: Container(
@@ -178,7 +191,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     child: Container(
                       width: 272,
                       child: Text(
-                        "Buy groceries in bulk at 10% - 25% below market price",
+                       "Buy groceries in bulk at 10% - 25% below market price",
+
                         style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
                           fontSize: 24,

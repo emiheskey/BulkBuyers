@@ -49,12 +49,14 @@ class WelcomeWidget extends StatefulWidget {
 class BaseLayout extends StatelessWidget{
   @override
   Widget build(BuildContext context){
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/image-bg.png"),
-            fit: BoxFit.cover,
+            fit: BoxFit.fitHeight,
           ),
         ),
         child: null /* add child content here */,
