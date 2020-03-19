@@ -1,9 +1,17 @@
 
+import 'package:bulk_buyers/screens/loginScreen.dart';
+import 'package:bulk_buyers/utils/configs/AppTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:bulk_buyers/login_widget/login_widget.dart';
 import 'package:bulk_buyers/sign_up_widget/sign_up_widget.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+   SystemChrome.setPreferredOrientations(
+           [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -22,9 +30,13 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.red,
+        //primarySwatch: Colors.deepOrange,
+        primaryColor: AppTheme.primarySwatch,
+        primarySwatch: Colors.deepOrange,
+
 
       ),
+      
       home: WelcomeWidget(title: 'Bulk Buyers Connect'),
     );
   }
@@ -68,7 +80,7 @@ class BaseLayout extends StatelessWidget{
 
 class _WelcomeWidgetState extends State<WelcomeWidget> {
 
-  void onViewPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginWidget()));
+  void onViewPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
 
   void onLearnMorePressed(BuildContext context) {
 

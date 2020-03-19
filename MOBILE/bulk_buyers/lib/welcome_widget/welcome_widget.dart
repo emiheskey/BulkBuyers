@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:bulk_buyers/login_widget/login_widget.dart';
 import 'package:bulk_buyers/sign_up_widget/sign_up_widget.dart';
+import 'package:bulk_buyers/screens/loginScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -67,7 +68,7 @@ class BaseLayout extends StatelessWidget{
 
 class _WelcomeWidgetState extends State<WelcomeWidget> {
 
-  void onViewPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginWidget()));
+  void onViewPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
 
   void onLearnMorePressed(BuildContext context) {
 
