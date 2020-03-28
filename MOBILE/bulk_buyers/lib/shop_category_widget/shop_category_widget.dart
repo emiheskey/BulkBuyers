@@ -7,6 +7,7 @@ import 'package:bulk_buyers/you_widget/you_widget.dart';
 
 
 class ShopCategoryWidget extends StatelessWidget {
+  AnimationController animationController;
   
   void onViewFourPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => ShopWidget()));
   
@@ -28,7 +29,7 @@ class ShopCategoryWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-  
+
     return Scaffold(
       body: Container(
         constraints: BoxConstraints.expand(),

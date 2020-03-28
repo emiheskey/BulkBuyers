@@ -6,9 +6,15 @@ import 'package:bulk_buyers/shop_widget/shop_widget.dart';
 import 'package:bulk_buyers/wishlist_widget/wishlist_widget.dart';
 import 'package:bulk_buyers/you_widget/you_widget.dart';
 
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
+
+
 
 class AllProductsListWidget extends StatelessWidget {
-  
+
+//  final sp = _sharedPreferences.getString("token");
   void onViewThreePressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => ShopWidget()));
   
   void onIconIonicIosMenuPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => YouWidget()));
@@ -40,7 +46,8 @@ class AllProductsListWidget extends StatelessWidget {
   }
   
   void onViewTwoPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => AllProductsGridWidget()));
-  
+
+
   @override
   Widget build(BuildContext context) {
   
@@ -1027,4 +1034,5 @@ class AllProductsListWidget extends StatelessWidget {
       ),
     );
   }
+
 }

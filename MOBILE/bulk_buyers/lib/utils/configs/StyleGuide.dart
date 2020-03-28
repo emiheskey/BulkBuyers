@@ -34,6 +34,22 @@ class AppStyle {
     fontSize: 24,
     color: Colors.white.withOpacity(0.8),
   );
+  static final TextStyle subHeading2 = TextStyle(
+    inherit: true,
+    fontFamily: 'Avenir',
+    fontWeight: FontWeight.w500,
+    fontSize: 24,
+    color: Colors.blue.shade800,
+  );
+
+  static final TextStyle subHeading3 = TextStyle(
+    inherit: true,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w300,
+    fontSize: 23,
+    color: AppTheme.graySwatch,
+  );
+
   static final TextStyle formText = TextStyle(
     color: AppTheme.formTextColor,
     fontFamily: 'Helvetica',
@@ -55,6 +71,6 @@ class AppStyle {
   static final TextStyle resetText = TextStyle(
     fontFamily: "Roboto",
     fontWeight: FontWeight.w500,
-    fontSize: 18,
+    fontSize: 12,
   );
 }

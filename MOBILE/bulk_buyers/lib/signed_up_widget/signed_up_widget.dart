@@ -29,6 +29,8 @@ class SignedUpWidget extends StatelessWidget {
         ),
         child: Stack(
           alignment: Alignment.topRight,
+
+
           children: [
             Positioned(
               left: 0,

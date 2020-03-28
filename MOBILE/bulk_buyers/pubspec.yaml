@@ -25,6 +25,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   shared_preferences: any
+  cached_network_image: any
 
 
 dev_dependencies:
@@ -32,6 +33,7 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: "^0.7.4"
   http: any
+  data_connection_checker: ^0.3.4
 
 
 flutter_icons:
@@ -70,6 +72,7 @@ flutter:
     - assets/images/icon-ionic-ios-menu.png
     - assets/images/icon-awesome-thumbs-up.png
     - assets/images/icon-feather-shopping-cart.png
+    - assets/images/icon-feather-shopping-cart-selected.png
     - assets/images/icon-feather-shopping-cart-3.png
     - assets/images/icon.png
     - assets/images/icon-material-add-shopping-cart.png
@@ -85,6 +88,7 @@ flutter:
     - assets/images/path-3968.png
     - assets/images/path-3969.png
     - assets/images/3j.png
+    - assets/images/shopping-cart.png
     - assets/images/tomatoes-large.png
     - assets/images/tomatoes.png
     - assets/images/path-4738.png

@@ -1,15 +1,17 @@
 
+import 'package:bulk_buyers/screens/loggedIn.dart';
 import 'package:flutter/material.dart';
 import 'package:bulk_buyers/forgot_password_widget/forgot_password_widget.dart';
 import 'package:bulk_buyers/sign_up_widget/sign_up_widget.dart';
 import 'package:bulk_buyers/signed_up_widget/signed_up_widget.dart';
+import 'package:bulk_buyers/screens/forgotPasswordScreen.dart';
 
 
 class LoginWidget extends StatelessWidget {
 
-  void onComponent21Pressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => SignedUpWidget()));
+  void onComponent21Pressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => LoggedIn()));
 
-  void onForgotPasswordPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPasswordWidget()));
+  void onForgotPasswordPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword()));
 
   void onDonTHaveAnAccounPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpWidget()));
 
@@ -75,6 +77,7 @@ class LoginWidget extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   hintText: "Enter email",
                   contentPadding: EdgeInsets.only(left: 10, top: 0),

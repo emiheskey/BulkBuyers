@@ -1,10 +1,12 @@
 
+import 'package:bulk_buyers/login_widget/login_widget.dart';
 import 'package:bulk_buyers/screens/loginScreen.dart';
+import 'package:bulk_buyers/screens/registrationScreen.dart';
 import 'package:bulk_buyers/utils/configs/AppTheme.dart';
 import 'package:flutter/material.dart';
-import 'package:bulk_buyers/login_widget/login_widget.dart';
-import 'package:bulk_buyers/sign_up_widget/sign_up_widget.dart';
 import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
+import 'package:bulk_buyers/utils/constants/Constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,6 +35,11 @@ class MyApp extends StatelessWidget {
         //primarySwatch: Colors.deepOrange,
         primaryColor: AppTheme.primarySwatch,
         primarySwatch: Colors.deepOrange,
+        canvasColor: Color.fromARGB(242, 243, 243, 243),
+        bottomAppBarTheme: BottomAppBarTheme(
+          elevation: 0,
+          color: Colors.blue
+        )
 
 
       ),
@@ -66,6 +73,7 @@ class BaseLayout extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       body: Container(
+        color: AppTheme.whiteSwatch,
         decoration: BoxDecoration(
           image: DecorationImage(
            image: AssetImage("assets/images/image-bg.png"),
@@ -80,16 +88,19 @@ class BaseLayout extends StatelessWidget{
 
 class _WelcomeWidgetState extends State<WelcomeWidget> {
 
-  void onViewPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+
+
+  void onViewPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) =>LoginWidget()));
 
   void onLearnMorePressed(BuildContext context) {
 
   }
 
-  void onViewTwoPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpWidget()));
-
+  void onViewTwoPressed(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationScreen()));
   @override
   Widget build(BuildContext context) {
+
+
 
     return Scaffold(
       body: new Container(
@@ -118,6 +129,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                     top: 40,
                     right: 0,
                     child: Container(
+                      color: AppTheme.whiteSwatch,
                       height: 521,
                       child: Image.asset(
                         "assets/images/image-bg.png",

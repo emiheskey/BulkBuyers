@@ -1,14 +1,20 @@
+import 'dart:async';
 import 'dart:convert';
 
+import 'package:bulk_buyers/screens/forgotPasswordScreen.dart';
+import 'package:bulk_buyers/screens/loggedIn.dart';
+import 'package:bulk_buyers/screens/registrationScreen.dart';
 import 'package:bulk_buyers/signed_up_widget/signed_up_widget.dart';
-import 'package:bulk_buyers/utils/configs/AppTheme.dart';
 import 'package:bulk_buyers/utils/configs/AppTheme.dart';
 import 'package:bulk_buyers/utils/configs/StyleGuide.dart';
 import 'package:bulk_buyers/utils/constants/Constants.dart';
-import 'package:bulk_buyers/utils/validation/Validations.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:bulk_buyers/utils/UIComponents/Buttons.dart' as btns;
+
+
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -18,21 +24,25 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = new GlobalKey<FormState>();
   bool _isLoading = false;
-
-  String _userEmail;
   String _userPassword;
+  String _userEmail;
+
+  Timer _timer;
+  int _start = 30;
+
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
           constraints: BoxConstraints.expand(),
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 255, 255, 255),
           ),
-          child: _isLoading
-              ? Center(child: CircularProgressIndicator())
-              : Form(
+          child: _isLoading ? Center(child: CircularProgressIndicator(),) : Form(
                   key: _formKey,
                   child: ListView(
                     padding: const EdgeInsets.all(20),
@@ -80,9 +90,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       Padding(
                         padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                         child: TextFormField(
+                          keyboardType: TextInputType.emailAddress,
                           style: AppStyle.formText,
                           autocorrect: false,
                           maxLines: 1,
+                          controller: _emailController,
                           decoration: InputDecoration(
                             labelText: 'Email',
                             // labelStyle: AppStyle.formLabel,
@@ -94,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           validator: (value) =>
                               value.isEmpty ? 'Email can\'t be empty' : null,
-                          autovalidate: true,
+                         // autovalidate: true,
                           onSaved: (value) => _userEmail = value,
                         ),
                       ),
@@ -105,6 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: AppStyle.formText,
                           autocorrect: false,
                           maxLines: 1,
+                          controller: _passwordController,
                           obscureText: true,
                           decoration: InputDecoration(
                             labelText: 'Password',
@@ -117,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           validator: (value) =>
                               value.isEmpty ? 'Password can\'t be empty' : null,
-                          autovalidate: true,
+                       //   autovalidate: true,
                           onSaved: (value) => _userPassword = value,
                         ),
                       ),
@@ -126,15 +139,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),
                         color: AppTheme.primarySwatch,
-                        onPressed: validateAndLogin,
+                        onPressed: () async {validateAndLogin();},
                         child: Text(
                           "Login",
                           style: AppStyle.primaryButton,
                         ),
                       ),
+
                       Center(
                         child: FlatButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) => ForgotPassword()),
+                                    (Route<dynamic> route) => false);
+                          },
                           color: AppTheme.transparentSwatch,
                           textColor: AppTheme.blueSwatch,
                           padding: EdgeInsets.all(0),
@@ -146,7 +165,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Center(
                         child: FlatButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) => RegistrationScreen()),
+                                    (Route<dynamic> route) => false);
+                          },
                           color: AppTheme.transparentSwatch,
                           textColor: AppTheme.blueSwatch,
                           padding: EdgeInsets.all(0),
@@ -166,18 +190,20 @@ class _LoginScreenState extends State<LoginScreen> {
     final form = _formKey.currentState;
     _formKey.currentState.save();
     if (form.validate()) {
-      setState(() {
-        _isLoading = true;
-        print('formisow tring to send');
-      });
-      signin(_userEmail, _userPassword);
-      print('$_userEmail, $_userPassword');
+
+   _makePostRequest(_userEmail, _userPassword);
+
     } else {
       print("form is  invalid");
     }
   }
 
-  signin(String userEmail, String userPassword) async {
+  _makePostRequest(String userEmail, String userPassword) async {
+    print("S");
+   startTimer();
+    setState(() {
+      _isLoading = true;
+    });
     Map data = {
       'email': userEmail,
       'password': userPassword,
@@ -191,24 +217,29 @@ class _LoginScreenState extends State<LoginScreen> {
       var response =
           await http.post('${Constants.BASE_URL}/access', body: data);
       if (response.statusCode == 200) {
-        print(response.body.toString());
+        print(response.body);
         jsonData = json.decode(response.body);
         setState(() {
-          _isLoading = false;
+         _isLoading = false;
           sharedPreferences.setString("token", jsonData['token']);
+          final sp = sharedPreferences.getString("token");
+          print("stored file is $sp");
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
-                  builder: (BuildContext context) => SignedUpWidget()),
+                  builder: (BuildContext context) => LoggedIn()),
               (Route<dynamic> route) => false);
         });
-      } else {
-        _isLoading = false;
+      }  if (response.statusCode == 401) {
+        setState(() {
+          _isLoading = false;
+        });
+        print(response.body);
         showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
                 title: Text('Error'),
-                content: Text("Check Internet Connection"),
+                content: Text("wrong Credentials"),
                 actions: <Widget>[
                   FlatButton(
                     child: Text('ok'),
@@ -219,9 +250,46 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               );
             });
+
       }
+
     } catch (ex) {
-      return null;
+      return ex.toString();
     }
+  }
+  void startTimer(){
+    const oneSec = const Duration(seconds: 1);
+    _timer = new Timer.periodic(
+      oneSec, (Timer timer) => setState(
+          (){
+        if(_start < 1) {
+
+          timer.cancel();
+          setState(() {
+            _isLoading = false;
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text('Error'),
+                    content: Text("Check Internet Connection"),
+                    actions: <Widget>[
+                      FlatButton(
+                        child: Text('ok'),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      )
+                    ],
+                  );
+                });
+          });
+        }
+        else{
+          _start = _start -1;
+        }
+      },
+    ),
+    );
   }
 }
