@@ -10102,3 +10102,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .login-html p { font-size: 16px;}
 .login-html p a { color: #007bb6;}
+
+.home-categories {
+  width: 100%;
+}
