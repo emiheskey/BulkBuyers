@@ -51,28 +51,26 @@ class _SignUpViewState extends State<SignUpView> {
                   UIHelper.inputFormField(
 
                       placeholder: 'First Name',
-                      controller: firstNameController,
-                      validationMessage: "First Name field cannot be empty"),
+                      controller: firstNameController,),
                   UIHelper.verticalSpaceSmall(),
                   UIHelper.inputFormField(
 
                       placeholder: 'Last Name',
                       controller: lastNameController,
-                      validationMessage: "Last Name field cannot be empty"),
+                  ),
                   UIHelper.verticalSpaceSmall(),
                   UIHelper.inputFormField(
 
                       placeholder: 'Email Address',
                       controller: emailController,
                       keyboard: TextInputType.emailAddress,
-                      validationMessage: "Email field cannot be empty"),
+                      validationMessage: model.emailError),
                   UIHelper.verticalSpaceSmall(),
                   UIHelper.inputFormField(
 
                       placeholder: 'Phone Number',
                       controller: phoneController,
-                      keyboard: TextInputType.phone,
-                      validationMessage: "Email field cannot be empty"),
+                      keyboard: TextInputType.phone,),
                   UIHelper.verticalSpaceSmall(),
                   UIHelper.inputFormField(
                       title: 'Confirm Password',
@@ -135,13 +133,10 @@ class _SignUpViewState extends State<SignUpView> {
               password: passwordController.text,
               confirmationPassword: confirmPasswordController.text);
 
-          // No validation errors. Perform signup
           if (passwordValidationMessage == null && _hasEnteredInformation) {
-           // print("${firstNameController.text} ${}");
             var viewState =
-                 await model.atemptRegister(firstName: firstNameController.text, lastName: lastNameController.text, password: passwordController.text, email: emailController.text, phone: phoneController.text);
-            if (viewState == 200) {
-              // Navigate to a different view here
+                 await model.signUpUser(firstNameController.text, lastNameController.text, passwordController.text, emailController.text, phoneController.text);
+            if (viewState) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => VerifyEmail()));
             }
@@ -153,3 +148,5 @@ class _SignUpViewState extends State<SignUpView> {
         });
   }
 }
+
+//firstName: firstNameController.text, lastName: lastNameController.text, password: passwordController.text, email: emailController.text, phone: phoneController.text

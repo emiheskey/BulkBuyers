@@ -32,7 +32,7 @@ class _PaymentViewState extends State<PaymentView> {
   bool get _hasEnteredInformation => addressController.text != '';
   _PaymentViewState({this.total, this.discountid, this.discount});
 
-  var publicKey = Constants.PAYSTACK_API_TEST_KEY;
+  var publicKey = Constants.PAYSTACK_API_LIVE_KEY;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

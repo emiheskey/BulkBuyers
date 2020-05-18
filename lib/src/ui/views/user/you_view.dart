@@ -356,14 +356,14 @@ class _YouViewState extends State<YouView> {
                         onPressed: () async {
                           print("click");
                           final RenderBox box = context.findRenderObject();
-                          Share.share("Sample",
+                          Share.share("https://bulkbuyersconnect.com/",
                               subject: "Get Bulk Buyers",
                               sharePositionOrigin:
                               box.localToGlobal(Offset.zero) &
                               box.size);
                         },
                       ),
-                      Text("Refer-A-Friend (Coming soon)"),
+                      Text("Refer-A-Friend"),
                     ],
                   ),
                 ),

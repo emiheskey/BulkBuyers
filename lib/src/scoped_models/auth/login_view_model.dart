@@ -14,6 +14,7 @@ class LoginViewModel extends BaseModel {
     setState(ViewState.Busy);
     var api = ApiProvider();
     try {
+      print('login strated');
       var response = await api.login(Login(email: email, password: password));
       print(response);
       if (response == 200) {
