@@ -1,6 +1,6 @@
 # bulk_buyers
 
-An eCommerce App.
+Bulk Buyyers Connect
 
 ## Getting Started
 
