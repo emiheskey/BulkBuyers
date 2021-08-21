@@ -428,40 +428,81 @@
     <!-- customer login start -->
     <div class="customer_login mt-60">
         <div class="container">
-                <div class="login-cont">
-                        <div class="login-html">
-                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-                            <input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
-                            <div class="login-form">
-                                <div class="sign-in-htm">
-                                    <div class="group">
-                                        <label for="user" class="label">Username or Email</label>
-                                        <input id="user" type="text" class="input">
-                                    </div>
-                                    <div class="group">
-                                        <label for="pass" class="label">Password</label>
-                                        <input id="pass" type="password" class="input" data-type="password">
-                                    </div>
-                                    <div class="group">
-                                        <input type="submit" class="button" value="Sign In">
-                                    </div>
-                                    <p class="text-center"><a href="signup.html">No Account? You can register here.</a></p>
-                                    <div class="hr"></div>
-                                </div>
-                                <div class="for-pwd-htm">
-                                    <div class="group">
-                                        <label for="user" class="label">Username or Email</label>
-                                        <input id="user" type="text" class="input">
-                                    </div>
-                                    <div class="group">
-                                        <input type="submit" class="button" value="Reset Password">
-                                    </div>
-                                    <p class="text-center"> A password reset link will be sent to your registered email.</p>
-                                    <div class="hr"></div>
-                                </div>
-                            </div>
+            <div class="col-md-5 mx-auto">
+                <div id="first">
+                    <div class="myform form">
+                         <div class="logo mb-3">
+                             <div class="col-md-12 text-center">
+                                <h1>Login</h1>
+                                <div class="stripe-bottom"></div>
+                             </div>
                         </div>
+                       <form action="" method="post" name="login">
+                               <div class="form-group">
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                               </div>
+                               <div class="form-group">
+                                  <label for="exampleInputEmail1">Password</label>
+                                  <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                               </div>
+                               
+                               <div class="col-md-12 text-center">
+                                  <button type="submit" class=" btn btn-block mybtn btn-login tx-tfm btn-lg">Login</button>
+                               </div>
+                               <div style="height: 20px;"></div>
+                               <div class="form-group">
+                                <p class="text-center"><a href="forgotpassword.html">I forgot my password</a></p>
+                             </div>
+                               <div class="form-group">
+                                  <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                               </div>
+                            </form>
+                     
                     </div>
+                </div>
+                  <div id="second">
+                      <div class="myform form">
+                            <div class="logo mb-3">
+                               <div class="col-md-12 text-center">
+                                  <h1 >Signup</h1>
+                                  <div class="stripe-bottom"></div>
+                               </div>
+                            </div>
+                            <form action="#" name="registration">
+                               <div class="form-group">
+                                  <label for="exampleInputEmail1">First Name</label>
+                                  <input type="text"  name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp">
+                               </div>
+                               <div class="form-group">
+                                  <label for="exampleInputEmail1">Last Name</label>
+                                  <input type="text"  name="lastname" class="form-control" id="lastname" aria-describedby="emailHelp">
+                               </div>
+                               <div class="form-group">
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp">
+                               </div>
+                               <div class="form-group">
+                                  <label for="exampleInputEmail1">Password</label>
+                                  <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp">
+                               </div>
+                               <div class="form-group">
+                                <label for="exampleInputEmail1">Confirm Password</label>
+                                <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp">
+                             </div>
+                               <div class="col-md-12 text-center mb-3 mt-4">
+                                  <button type="submit" class=" btn btn-block mybtn btn-login tx-tfm btn-lg">Get Started For Free</button>
+                               </div>
+                               <div class="col-md-12 ">
+                                  <div class="form-group">
+                                     <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                                  </div>
+                               </div>
+                         </div>
+                            </form>
+                         </div>
+                </div>
+            </div>
         </div>    
     </div>
     <!-- customer login end -->
@@ -573,6 +614,7 @@
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
 
+<script src="assets/js/login.js"></script>
 
 
 </body>

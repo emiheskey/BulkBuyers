@@ -368,6 +368,27 @@
         dots:true,
     })
     
+    /*---- promo slider ----*/
+    $('.promo-slider').owlCarousel({
+        loop:true,
+        margin:20,
+        nav:true,
+        autoplay:true,
+        navText: ['<i class="ion-ios-arrow-left"></i>','<i class="ion-ios-arrow-right"></i>'],
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    })
     
      /*---blog column4 activation---*/
     $('.blog_column4').owlCarousel({
