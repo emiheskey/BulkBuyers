@@ -1,0 +1,4 @@
+[2020-09-19 19:30:20] production.ERROR: Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Declaration of Symfony\\Component\\Translation\\TranslatorInterface::setLocale($locale) must be compatible with Symfony\\Contracts\\Translation\\LocaleAwareInterface::setLocale(string $locale) at /Users/apple/Desktop/projects/bulkbuyers/BBCApp/vendor/symfony/translation/TranslatorInterface.php:24)
+[stacktrace]
+#0 {main}
+"} 
