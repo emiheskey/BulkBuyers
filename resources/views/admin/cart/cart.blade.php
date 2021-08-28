@@ -75,7 +75,7 @@
                                                     <td data-th="Quantity">
                                                         <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
                                                     </td>
-                                                    <td data-th="Subtotal" class="text-center">${{ $details['price'] * $details['quantity'] }}</td>
+                                                    <td data-th="Subtotal" class="text-center"> {{ $details['price'] * $details['quantity'] }}</td>
                                                     <td class="actions" data-th="">
                                                         <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
                                                         <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i></button>
@@ -113,7 +113,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td colspan="2">
-                                                        <a href="off-line-invoice.html" class="btn btn-danger btn-block">Place this order</a>
+                                                        <a href="{{ url('app/admin/cart/invoice')}}" class="btn btn-danger btn-block">Place this order</a>
                                                     </td>
                                                 </tr>
                                                

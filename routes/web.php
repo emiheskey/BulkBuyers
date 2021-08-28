@@ -104,6 +104,7 @@
             Route::get('add-to-cart/{id}', 'Admin\CartController@addToCart')->name('offline.add-to-cart');
             Route::patch('update-cart', 'Admin\CartController@update')->name('offline.update-cart');
             Route::delete('remove-from-cart', 'Admin\CartController@remove')->name('offline.remove-from-cart');
+            Route::get('invoice', 'Admin\CartController@invoice')->name('offline.invoice');
         });
 
         Route::group(['prefix'=>'orders'], function (){

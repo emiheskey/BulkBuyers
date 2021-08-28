@@ -14,6 +14,12 @@ class CartController extends Controller
         return view('admin.cart.cart');
     }
 
+    //cart invoice
+    public function invoice()
+    {
+        return view('admin.cart.invoice');
+    }
+
     //add item to cart
     public function addToCart($id)
     {
@@ -28,7 +34,8 @@ class CartController extends Controller
                     "productname" => $product->productname,
                     "quantity" => 1,
                     "price" => $product->price,
-                    "photo" => $product->productimg
+                    "photo" => $product->productimg,
+                    "desc" => $product->description
                 ]
             ];
             session()->put('cart', $cart);
@@ -47,7 +54,8 @@ class CartController extends Controller
             "productname" => $product->productname,
             "quantity" => 1,
             "price" => $product->price,
-            "photo" => $product->productimg
+            "photo" => $product->productimg,
+            "desc" => $product->description
         ];
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product added to cart successfully!');
