@@ -112,11 +112,12 @@
                                                 </tr></thead>
                                                 <tbody>
                                                     <?php $total = 0 ?>
+                                                        <?php $count = 0; ?>
                                                         @if(session('cart'))
                                                             @foreach(session('cart') as $id => $details)
                                                                 <?php $total += $details['price'] * $details['quantity'] ?>
                                                                 <tr>
-                                                                    <td>1</td>
+                                                                    <td>{{ $count ++ }}</td>
                                                                     <td>{{ $details['productname'] }}</td>
                                                                     <td>{{ $details['desc'] }}</td>
                                                                     <td>{{ $details['quantity'] }}</td>
