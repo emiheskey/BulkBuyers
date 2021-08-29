@@ -101,12 +101,9 @@ class AdminController extends Controller
         return redirect()->back()->withSuccess('Admin User successfully deleted');
     }
 
-
-
     public function getChangePassword()
     {
         return view('admin.user.changepassword');
-
     }
 
     public function postChangePassword(){

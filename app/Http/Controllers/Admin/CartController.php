@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -18,6 +19,12 @@ class CartController extends Controller
     public function invoice()
     {
         return view('admin.cart.invoice');
+    }
+
+    //invoice reciept
+    public function invoiceRecipt(Request $request)
+    {
+        return view('admin.cart.invoice-recipt', compact('request'));
     }
 
     //add item to cart
@@ -84,6 +91,19 @@ class CartController extends Controller
             }
             session()->flash('success', 'Product removed successfully');
         }
+    }
+
+     //remove item from cart
+    public function clearCart()
+    {
+        $cart = session()->pull('cart', []);
+        foreach ($cart as $idToDelete) {
+            if(($key = array_search($idToDelete, $cart)) !== false) {
+                unset($cart[$key]);
+            }
+            session()->put('cart', $cart);
+        }
+        return redirect()->back()->with('success', 'Cart cleard successfully');
     }
 
 }

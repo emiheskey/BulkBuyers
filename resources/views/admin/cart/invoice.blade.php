@@ -48,7 +48,8 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <form class="bg-light p-3" style="border-radius: 5px;">
+                                <form class="bg-light p-3" style="border-radius: 5px;" action="{{ route('offline.invoice-recipt')}}" method="get">
+                                   @csrf 
                                     <div class="form-row">
                                       <div class="form-group col-md-6">
                                         <label for="fname">First Name</label>
@@ -89,7 +90,7 @@
                                         </select>
                                       </div>
                                     </div>
-                                  </form>
+                                 
                                 <div class="clearfix">
                                     <div class="float-left text-center mt-3">
                                         <h3>Your Customer's Order</h3>
@@ -112,7 +113,7 @@
                                                 </tr></thead>
                                                 <tbody>
                                                     <?php $total = 0 ?>
-                                                        <?php $count = 0; ?>
+                                                        <?php $count = 1; ?>
                                                         @if(session('cart'))
                                                             @foreach(session('cart') as $id => $details)
                                                                 <?php $total += $details['price'] * $details['quantity'] ?>
@@ -158,9 +159,10 @@
                                           </div>
                                           <h3 class="">Total: N{{ $total }}</h3>
                                           <p>
-                                              <a href="offlineinvoice.html" class="btn btn-success btn-block btn-lg"><i class="mdi mdi-cart"></i> Generate Invoice</a>
+                                            <button class="btn btn-success btn-md"><i class="mdi mdi-cart"></i> Generate Invoice</a>
                                           </p>
                                     </div>
+                                </form>
                                 </div>
                                 <hr>
                             </div>
