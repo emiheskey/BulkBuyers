@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Helper;
 use App\Models\Product;
+use App\Models\OfflineOrder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
+    public $helper;
+
+    public function __construct(Helper $helper)
+    {
+        $this->helper = $helper;
+    }
+
     //view cart
     public function cart()
     {
@@ -48,14 +57,14 @@ class CartController extends Controller
             session()->put('cart', $cart);
             return redirect()->back()->with('success', 'Product added to cart successfully!');
         }
- 
+
         // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
             return redirect()->back()->with('success', 'Product added to cart successfully!');
         }
- 
+
         // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
             "productname" => $product->productname,
@@ -104,6 +113,45 @@ class CartController extends Controller
             session()->put('cart', $cart);
         }
         return redirect()->back()->with('success', 'Cart cleard successfully');
+    }
+
+    //store order
+    public function storeOrder(Request $request)
+    {
+        $request->validate([
+            'product_id' => 'required|array',
+            'qty' => 'required',
+            'fname'  => 'required',
+            'lname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'address' => 'sometimes',
+            'town' => 'required',
+            'state' => 'required',
+            'qty' => 'required',
+            'total' => 'required',
+        ]);
+        $order_id = $this->helper->randomOrderID(7);
+        foreach($request->input('product_id') as $key => $value)
+        {
+            $orderDetails =  OfflineOrder::create([
+                'product_id' => $value,
+                'order_id' => $order_id,
+                'qty' => $request->qty,
+                'fname'  => $request->fname,
+                'lname' => $request->lname,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'town' => $request->town,
+                'state' => $request->state,
+                'qty' => $request->qty,
+                'total' => $request->total,
+                'order_status' => "Pending",
+            ]);
+        }
+        return redirect()->back()->with('success', "Order made successfully order id is $orderDetails->order_id");
+
     }
 
 }

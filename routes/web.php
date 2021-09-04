@@ -107,6 +107,7 @@
             Route::get('invoice', 'Admin\CartController@invoice')->name('offline.invoice');
             Route::get('invoice-recipt', 'Admin\CartController@invoiceRecipt')->name('offline.invoice-recipt');
             Route::get('cart-clear', 'Admin\CartController@clearCart')->name('offline.cart-clear');
+            Route::post('push-to-order', 'Admin\CartController@storeOrder')->name('offline.push-to-order');
         });
 
         Route::group(['prefix'=>'orders'], function (){

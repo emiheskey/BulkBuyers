@@ -30,8 +30,8 @@
                             <h4 class="page-title">Offline Order Invoice</h4>
                         </div>
                     </div>
-                </div>     
-                <!-- end page title --> 
+                </div>
+                <!-- end page title -->
 
                 <div class="row">
 
@@ -49,7 +49,7 @@
                                 </div>
                                 <hr>
                                 <form class="bg-light p-3" style="border-radius: 5px;" action="{{ route('offline.invoice-recipt')}}" method="get">
-                                   @csrf 
+                                   @csrf
                                     <div class="form-row">
                                       <div class="form-group col-md-6">
                                         <label for="fname">First Name</label>
@@ -90,7 +90,7 @@
                                         </select>
                                       </div>
                                     </div>
-                                 
+
                                 <div class="clearfix">
                                     <div class="float-left text-center mt-3">
                                         <h3>Your Customer's Order</h3>
@@ -167,11 +167,11 @@
                                 <hr>
                             </div>
                         </div>
-                        
+
                     </div><!-- end col -->
 
                 </div>
-                <!-- end row -->     
+                <!-- end row -->
 
             </div> <!-- end container -->
         </div>
