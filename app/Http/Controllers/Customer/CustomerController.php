@@ -119,8 +119,9 @@ class CustomerController extends Controller
 
             //\Mail::to($user)->send(new UserOrder($orderstate,$mydetails,$user));
 
+            $fees = ShippingFee::all();
             $states = State::where('stateid',2)->get();
-            return view('customer.checkout', compact('user','myorders','states','mydetails'));
+            return view('customer.checkout', compact('user','myorders','states','mydetails', 'fees'));
         }
 
         return redirect()->back();

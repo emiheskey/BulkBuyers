@@ -27,6 +27,9 @@
     <link href="{{asset('admin/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('admin/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
 
+    <link href="{{asset('admin/css/custombox.min.css')}}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.18.10/slimselect.min.css" rel="stylesheet"></link>
+
 </head>
 
 <body>

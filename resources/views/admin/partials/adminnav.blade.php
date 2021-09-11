@@ -174,6 +174,9 @@
                                 <a href="reports.html"><i class="mdi mdi-file-chart"></i>Reports</a>
                             </li> --}}
                             <li class="has-submenu">
+                                <a href="{{  route('offline.shipping-fee') }}"><i class="mdi mdi-cash"></i>Shipping Fee</a>
+                            </li>
+                            <li class="has-submenu">
                                 <a href="{{route('offline.product')}}" class="btn-success text-white bg-success"><i class="mdi mdi-cart"></i>Offline Orders</a>
                             </li>
 

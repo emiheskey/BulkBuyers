@@ -110,6 +110,14 @@
             Route::post('push-to-order', 'Admin\CartController@storeOrder')->name('offline.push-to-order');
         });
 
+        Route::group(['prefix'=>'cart'], function (){
+            Route::get('shipping-fee', 'Admin\ShippingController@index')->name('offline.shipping-fee');
+            Route::post('create-fee', 'Admin\ShippingController@store')->name('offline.create-fee');
+            Route::get('edit-fee/{id}', 'Admin\ShippingController@edit')->name('offline.edit-fee');
+            Route::patch('update-fee/{id}', 'Admin\ShippingController@update')->name('offline.update-fee');
+            Route::get('delete-fee/{id}', 'Admin\ShippingController@delete')->name('offline.delete-fee');
+        });
+
         Route::group(['prefix'=>'orders'], function (){
 
             Route::get('/list', 'Admin\OrderController@index')->name('list.orders');

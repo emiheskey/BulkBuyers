@@ -54,6 +54,17 @@
                                 </div>
 
                                 <div class="col-lg-6 mb-20">
+                                    <label for="city">Town <span>*</span></label>
+                                    <select class="nice-select niceselect_option" name="stateid" id="town" required>
+                                        @foreach($fees as $fee)
+                                            <option value="{{$fee->name}}">
+                                                {{$fee->name}}
+                                            </option>
+                                       @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-6 mb-20">
                                     <label for="city">Location <span>*</span></label>
                                     <select class="nice-select niceselect_option" name="stateid" id="stateid" required>
                                         @foreach($states as $state)
@@ -63,6 +74,7 @@
                                        @endforeach
                                     </select>
                                 </div>
+
                                 <div class="col-12 mb-20">
                                     <label>Address  <span>*</span></label>
                                     <input placeholder="Type your address" name="address" type="text" value="{{ ($user->billaddress) ? $user->billaddress->address : $user->userprofile->address }}" required>
@@ -96,7 +108,10 @@
                                           @endforelse
                                         </tbody>
                                         <tfoot>
-
+                                            <tr class="order_total">
+                                                <th>Shipping</th>
+                                                <td><strong>&#8358; 000</strong></td>
+                                            </tr>
                                             <tr class="order_total">
                                                 <th>Order Total</th>
                                                 <td><strong>&#8358;{{number_format($myorders->totalcost)}}</strong></td>
@@ -107,7 +122,7 @@
                                 <div class="payment_method">
 
                                 <div class="order_button text-center">
-                                    <button type="submit" class="btn-block">Proceed to payment</button> 
+                                    <button type="submit" class="btn-block">Proceed to payment</button>
                                  {{--  <a href="#Payment" data-toggle="modal" class="text-center btn-success btn-lg">Proceed to Payment</a> --}}
                                 </div>
                                 <p class="mt-4 text-center"><img src="{{asset('assets/img/icon/payment2.png')}}"></p>
