@@ -33,7 +33,23 @@ class CartController extends Controller
     //invoice reciept
     public function invoiceRecipt(Request $request)
     {
-        return view('admin.cart.invoice-recipt', compact('request'));
+        return  view('admin.cart.invoice-recipt', compact('request'));
+    }
+
+    //export pdf
+    public function exportInvoicePdf(Request $request)
+    {
+        $data = [
+            'fname' => $request->fname,
+            'lname' => $request->lname,
+            'email' => $request->email,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'title' =>  $request->fname,
+            'date' => date('m/d/Y')
+        ];
+        $pdf = \PDF::loadView('admin.cart.myPDF', $data);
+        return $pdf->download('invoice-list.pdf');
     }
 
     //add item to cart

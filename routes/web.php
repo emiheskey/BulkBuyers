@@ -105,7 +105,8 @@
             Route::patch('update-cart', 'Admin\CartController@update')->name('offline.update-cart');
             Route::delete('remove-from-cart', 'Admin\CartController@remove')->name('offline.remove-from-cart');
             Route::get('invoice', 'Admin\CartController@invoice')->name('offline.invoice');
-            Route::get('invoice-recipt', 'Admin\CartController@invoiceRecipt')->name('offline.invoice-recipt');
+            Route::any('invoice-recipt', 'Admin\CartController@invoiceRecipt')->name('offline.invoice-recipt');
+            Route::get('invoice-pdf', 'Admin\CartController@exportInvoicePdf')->name('offline.invoice-pdf');
             Route::get('cart-clear', 'Admin\CartController@clearCart')->name('offline.cart-clear');
             Route::post('push-to-order', 'Admin\CartController@storeOrder')->name('offline.push-to-order');
         });
